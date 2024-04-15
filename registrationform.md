@@ -12,8 +12,14 @@
 3. preferences
 #### 1. personal details 
 - personal details should contain name,dob,gender,address,current location,adhar number,phone number.
+- name:should be greater then 4 character and should be less then 25
+- dob: The person's year of birth should be 2006 or earlier(age>=18).
+- gender: should have male,female and others options
+- address:This must be optional field
+- current location:get current location through geo location or by getting pincode(optional)
+- adhar number:length should be equal to 12
+- phone number:should contain country code with 10 digit phone number
 - make address and location as optional fields and all other as mandatory fields.
-- phone number should contaion country code along with the number.
 #### 2. educational background
 - add a drop down menu so that user can select his highest educational qualification.
 - user should upload his certificate of highest qualification
