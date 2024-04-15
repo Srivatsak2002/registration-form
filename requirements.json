@@ -73,7 +73,8 @@
             "properties": {
                 "job":{"type":"string"},
                 "job_type":{"enum": ["full-time","part-time"]},
-                "job_location":{"type":"string"}
+                "job_location":{"type":"string"},
+                "jobname":{"type":"integer"}
             }
 
         }
