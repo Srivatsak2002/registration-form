@@ -9,6 +9,7 @@
 1. Personal details
 2. Educational background
 3. preferences
-#### personal details 
+#### 1. personal details 
+#### 2. educational background
 
 
