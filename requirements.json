@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title":"form details",
+    "type":"object",
+    "properties": {
+        "personal_details":{
+            "type":"object",
+            "properties": {
+                "name":{
+                    "discription":"name of the candidate",
+                    "type":"string",
+                    "minLength":4,
+                    "maxLength":25
+                },
+                "dob":{
+                    "discription":"date of birth of the candidate",
+                    "type":"string",
+                    "format":"date",
+                    "formatmaximum":"2006-01-01"
+                },
+                "age":{
+                    "type":"integer","minimum":18
+                },
+                "gender":{"enum":["m","f","o"]},
+                "address": {
+                    "type": "object",
+                    "properties": {
+
+                        "street": {
+                            "type": "string"
+                        },
+                        "city": {
+                            "type": "string"
+                        },
+                        "state": {
+                            "type": "string"
+                        },
+                        "postalCode": {
+                            "type": "string",
+                            "pattern": "\\d{6}"
+                        }
+                    },
+                    "required": ["postalCode"]
+                },
+                "aadhar_number":{
+                    "type": "string",
+                    "pattern": "^[1-9]\\d{11}$",
+                    "maxLength": 12,
+                    "minLength": 12
+                },
+                "current_location":{
+                    "type":"string"
+                },
+                "phone_number":{
+                    "type": "string",
+                    "pattern": "^\\+91[1-9]\\d{9}$"
+                }
+            },
+            "required":["name","dob","age","gender","aadhar_number","phone_number"]
+        },
+        "education_qualification":{
+            "type":"object",
+            "properties": {
+                "education_type":{"enum": ["10th","12th","UG","PG"]},
+                "file": {
+                    "type": "string",
+                    "format": "binary"
+                }   
+            }
+        },
+        "preferences":{
+            "type":"object",
+            "properties": {
+                "job":{"type":"string"},
+                "job_type":{"enum": ["full-time","part-time"]},
+                "job_location":{"type":"string"}
+            }
+
+        }
+    }
+}
