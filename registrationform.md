@@ -17,7 +17,7 @@
 - gender: should have male,female and others options
 - address:This must be optional field
 - current location:get current location through geo location or by getting pincode(optional)
-- adhar number:length should be equal to 12
+- aadhar number:length should be equal to 12
 - phone number:should contain country code with 10 digit phone number
 - make address and location as optional fields and all other as mandatory fields.
 #### 2. educational background
