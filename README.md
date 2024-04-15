@@ -6,8 +6,8 @@
 
 ## registration page related information
 1.form should have 3 sections
-+Personal details
-+Educational background
-+preferences
++ Personal details
++ Educational background
++ preferences
 
   
