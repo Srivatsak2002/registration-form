@@ -24,9 +24,10 @@
 - preference section should contain about the information about the job user is looking for.
 - should contain field to select type of the job (fulltime or parttime).
 - job location preference
+- all these fields are optional
 ***
 ### Recommendations
-1. use json schema for validations
-2. 
+1. use json schema for validations.
+2. use MUI for UI components.
 
 
