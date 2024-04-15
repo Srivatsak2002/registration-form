@@ -22,12 +22,15 @@
   
 + make address and location as optional fields and all other as mandatory fields.
 #### 2. educational background
-- add a drop down menu so that user can select his highest educational qualification.
-- user should upload his certificate of highest qualification.
-- give some conditions for the type of the file he/she is uploding,for example jpeg,pdf.. etc
-- file should not be more then 5mb and should be greater then 0kb.
+- This section should contain 2 fields type and file.
+  
+- Type: a drop down menu for selecting highest qualification, options should be 1oth,12th,graduation,post graduation.
+- File: this field is for uploding certidicate of user's highest qualification.type of the file should be jpeg,pdf or doc,file should be greater then 0kb and should not be greater then 5mb.
+  
 - all these should be optional fields.
 #### 3. preferences
+- This section should contain 3 fields job,type and location.
+- job:
 - preference section should contain the field to get the information about the field of the job user is looking for.
 - should contain field to select type of the job (fulltime or parttime).
 - job location preference
