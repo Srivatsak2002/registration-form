@@ -1,6 +1,14 @@
-{
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "title":"form-details",
+
+import './App.css';
+import Buttonappbar from './component/appbar';
+import Buttons from './component/button';
+import Form from '@rjsf/core';
+import { RJSFSchema } from '@rjsf/utils';
+import validator from '@rjsf/validator-ajv8';
+
+
+const schema: RJSFSchema = {
+  "title":"form-details",
     "type":"object",
     "properties": {
         "personal_details":{
@@ -16,7 +24,8 @@
                     "format":"date"
                 },
                 "age":{
-                    "type":"integer"
+                    "type":"integer",
+                    "minimum":16
                 },
                 "gender":{"enum":["male","female","others"]},
                 "address": {"type": "string"},
@@ -112,4 +121,25 @@
             }
         }   
     }
+};
+
+
+
+
+
+
+function App() {
+  return (
+    <div className="App">
+      <Buttonappbar/><br/>
+      <Buttons/>
+      <Form
+    schema={schema}
+    validator={validator}
+    
+  />
+    </div>
+  );
 }
+
+export default App;
