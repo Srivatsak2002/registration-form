@@ -5,6 +5,7 @@ type helloprops = {
 
 
 export const Hello = (props:helloprops) =>{
+    
     return(
         <div>
             <h1>welcome...{props.name} you have {props.msgcount} messages</h1>
