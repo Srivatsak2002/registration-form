@@ -24,16 +24,32 @@
                     "type":"string",
                     "pattern": "\\d{6}"
                 },
-                "aadhar_number":{
-                    "type": "string",
-                    "pattern": "^[1-9]\\d{11}$",
-                    "maxLength": 12,
-                    "minLength": 12
+                "id_proof": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": ["Aadhar", "Voter-ID", "PAN", "Driving-License"]
+                        },
+                        "number": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["type", "number"]
                 },
                 "current_location":{"type":"string"},
                 "mobile_number":{
-                    "type": "string",
-                    "pattern": "^\\+91[1-9]\\d{9}$"
+                    "type": "object",
+                    "properties": {
+                        "country_code":{
+                            "type":"string",
+                            "pattern": "^\\+[1-9][0-9]{0,2}$"
+                        },
+                        "number":{
+                            "type": "string",
+                            "pattern": "^\\d+$"
+                        }
+                    }  
                 },
                 "email": {
                     "type": "string",
@@ -48,7 +64,7 @@
                 "type": "object",
                 "properties": {
                     "education_type": {
-                        "enum": ["SSLC", "2nd PUC", "Under Graduation", "Post Graduation"]
+                        "enum": ["SSLC", "2nd-PUC", "Under-Graduation", "Post-Graduation"]
                     },
                     "institution_name": {
                         "type": "string"
@@ -78,7 +94,7 @@
                         "job": {"type": "string"},
                         "type": {"enum": ["full-time", "part-time","internship"]},
                         "location": {"type": "string"},
-                        "mode":{"enum": ["work from home","work from office"]}
+                        "mode":{"enum": ["work-from-home","work-from-office"]}
                     }
                 },
                 "course_preferences": {
@@ -87,7 +103,7 @@
                         "type": "object",
                         "properties": {
                             "name": {"type": "string"},
-                            "type": {"enum": ["Technical Course", "Business Course", "Creative Course", "Language Course", "Personal Development Course", "Hobby Course"] },
+                            "type": {"enum": ["Technical-Course", "Business-Course", "Creative-Course", "Language-Course", "Personal-Development-Course", "Hobby-Course"] },
                             "mode": {"enum": ["Online", "Offline"]},
                             "language": {"enum": ["Kannada", "English", "Telugu", "Tamil", "Hindi", "Other"]}
                         }
