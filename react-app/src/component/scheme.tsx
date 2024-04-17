@@ -1,10 +1,10 @@
-import { RJSFSchema } from '@rjsf/utils';
+import { RJSFSchema, UiSchema } from '@rjsf/utils';
 import validator from '@rjsf/validator-ajv8';
-import Form from '@rjsf/core';
-
+import Form from '@rjsf/mui';
+import { red } from '@mui/material/colors';
 
 const schema: RJSFSchema = {
-    "title": "form-details",
+    "title": "Form-details",
     "type": "object",
     "properties": {
         "personal_details": {
@@ -54,14 +54,15 @@ const schema: RJSFSchema = {
                             "type": "string",
                             "pattern": "^\\d+$"
                         }
-                    }
+                    },
+                    "required": ["country_code", "number"]
                 },
                 "email": {
                     "type": "string",
                     "format": "email"
                 }
             },
-            "required": ["name", "date_of_birth", "age", "gender", "aadhar_number", "mobile_number"]
+            "required": ["name", "date_of_birth", "age", "gender", "id_proof", "mobile_number"]
         },
         "education_qualifications": {
             "type": "array",
@@ -71,20 +72,9 @@ const schema: RJSFSchema = {
                     "education_type": {
                         "enum": ["SSLC", "2nd-PUC", "Under-Graduation", "Post-Graduation"]
                     },
-                    "institution_name": {
-                        "type": "string"
-                    },
-                    "start_date": {
-                        "type": "string",
-                        "format": "date"
-                    },
-                    "end_date": {
-                        "type": "string",
-                        "format": "date"
-                    },
                     "file": {
                         "type": "string",
-                        "format": "binary"
+                        "format": "data-url"
                     }
                 }
             }
@@ -117,15 +107,33 @@ const schema: RJSFSchema = {
             }
         }
     }
-};
+}
 
+
+const uiSchema: UiSchema = {
+    "personal_details": {
+        "name": {
+            'ui:classNames': 'button',
+            "ui:autofocus": true,
+            "ui:emptyValue": "",
+            "ui:autocomplete": "family-name"
+
+        }
+    }
+}
 
 const GetSchemea = () => {
     return (<div className="App">
         <Form
             schema={schema}
             validator={validator}
-        />
+            uiSchema={uiSchema}>
+            <div>
+                <button className='button' type='submit'>Submit</button>
+                <button type='button'>Cancel</button>
+            </div>
+        </Form>
+
     </div>
     )
 }

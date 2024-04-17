@@ -9,3 +9,4 @@ export function Buttons(props:pro) {
   
   return <Button variant="contained">{props.props}</Button>;
 }
+

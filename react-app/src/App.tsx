@@ -6,6 +6,7 @@ import GetSchemea from './component/scheme';
 
 
 function App() {
+    
     const [isClicked, setisClicked] = useState(false);
 
     const buttonClick = () => {
@@ -13,7 +14,9 @@ function App() {
     }
 
     return !isClicked ? <HomePage cb={buttonClick}/> : <GetSchemea/>
-    
+   
+   
+
 }
 
 export default App;
