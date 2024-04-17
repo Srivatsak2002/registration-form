@@ -122,7 +122,7 @@ const uiSchema: UiSchema = {
     }
 }
 
-const GetSchemea = () => {
+const GetSchema = () => {
     return (<div className="App">
         <Form
             schema={schema}
@@ -138,4 +138,4 @@ const GetSchemea = () => {
     )
 }
 
-export default GetSchemea;
+export default GetSchema;
