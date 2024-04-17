@@ -1,11 +1,11 @@
 import { MouseEventHandler } from "react";
 
-type propstype ={
-    cb:MouseEventHandler
+type propstype = {
+    cb: MouseEventHandler
 }
 
 
-const HomePage = (cb:propstype) => {
+const HomePage = (cb: propstype) => {
     return (
         <div className="button-container">
             <button onClick={cb.cb}>Open Registration Form</button>
